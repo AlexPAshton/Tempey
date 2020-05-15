@@ -1,0 +1,77 @@
+code{
+    color:rgb(255, 255, 255);
+}
+
+code span
+{
+    color: rgb(34, 240, 255);
+}
+
+cas
+{
+    color: rgb(119, 167, 255);
+}
+
+org
+{
+    color: rgb(119, 255, 142);
+}
+
+.green
+{
+    color: rgb(57, 156, 73);
+}
+
+.codewrapper{
+    border: 1px solid #dbdbdb;
+    background-color: rgb(45, 56, 46);
+    padding: 10px;
+    overflow:hidden;
+    overflow-x: auto;
+}
+
+.codelabel
+{
+    border: 1px solid #dbdbdb;
+
+    margin-bottom: -5px;
+    padding: 5px;
+}
+
+.banner
+{
+    background-color: rgb(204, 243, 140);
+    height: 140px;
+}
+
+.banner:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 700px;
+    width: 25%;
+    height: 110%;
+    background: rgb(204, 243, 140);
+    -webkit-transform-origin: 100% 0;
+    -ms-transform-origin: 100% ;
+    transform-origin: 100% 0;
+    -webkit-transform: skew(-25deg);
+    -ms-transform: skew(-25deg);
+    transform: skew(-25deg);
+    z-index: -1;
+  }
+
+.btn-primary
+{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(153, 189, 94);
+    border-color: rgb(104, 196, 119);
+}
+
+.btn-secondary
+{
+    width: 100%;
+    padding: 10px;
+}

@@ -1,0 +1,6 @@
+#Stops directory listings from showing
+Options -Indexes
+ErrorDocument 404 /404.html
+
+# Allows html pages to run php
+AddType application/x-httpd-php .html .htm
