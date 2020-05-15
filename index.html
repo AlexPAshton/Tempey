@@ -42,6 +42,21 @@
                     <p>{{ Content3 }}</p>
                     <p class="codelabel">IndexService.php</p>
                     <div class="codewrapper"><code>{{ CodeExample2 }}</code></div>
+                    <br>
+                    <h4>{{ InstallationUsageTitle }}</h4>
+                    <p>{{ InstallationUsage }}</p>
+                    <div class="codewrapper"><code>{{ InstallationCodeExample }}</code></div>
+                    <br>
+                    <h4>{{ LimitationsTitle }}</h4>
+                    <p>{{ LimitationsContent }}</p>
+                    <ul>
+                        {% for limitation in LimitationsList %}
+                        <li>{{ limitation }}</li>
+                        {% endfor %}
+                    </ul>
+                    <br>
+                    <h4>{{ GetInTouchTitle }}</h4>
+                    <a href="{{ TwitterLink }}">Twitter</a>
                 </div>
             </div>
         </div>
@@ -51,5 +66,7 @@
     </body>
 </html>
 
-<?php include("./services/indexservice.php");?>
-<?php include("./tempey/templateprocessor.php");?>
+<?php 
+    include("./services/indexservice.php");
+    include("./tempey/templateprocessor.php");
+?>
