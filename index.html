@@ -29,19 +29,19 @@
                         </div> 
                         <br>   
                     {% endfor %}   
-                    <div class="btn btn-primary mb-2">Download Framework</div>
-                    <div class="btn btn-secondary mb-5">Github Repository</div>
+                    <a class="btn btn-primary mb-2" href="https://github.com/AlexPAshton/Tempey/archive/master.zip">Download Framework</a>
+                    <a class="btn btn-secondary mb-5" href="https://github.com/AlexPAshton/Tempey">Github Repository</a>
                 </div>
                 <div class="col-md-9">
                     <h4>{{ ContentTitle }}</h4>
                     <p>{{ Content }}</p>
                     <p>{{ Content2 }}</p>
                     <p class="codelabel">Index.html</p>
-                    <div class="codewrapper"><code style="white-space: pre;">{{ CodeExample }}</code></div>
+                    <div class="codewrapper"><code>{{ CodeExample }}</code></div>
                     <br>
                     <p>{{ Content3 }}</p>
                     <p class="codelabel">IndexService.php</p>
-                    <div class="codewrapper"><code style="white-space: pre;">{{ CodeExample2 }}</code></div>
+                    <div class="codewrapper"><code>{{ CodeExample2 }}</code></div>
                 </div>
             </div>
         </div>
@@ -51,6 +51,6 @@
     </body>
 </html>
 
-<?php include("templatevariables.php");?>
-<?php include("indexservice.php");?>
-<?php include("templateprocessor.php");?>
+<?php include("./tempey/templatevariables.php");?>
+<?php include("./services/indexservice.php");?>
+<?php include("./tempey/templateprocessor.php");?>

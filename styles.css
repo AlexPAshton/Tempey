@@ -1,5 +1,6 @@
 code{
     color:rgb(255, 255, 255);
+    white-space: pre;
 }
 
 code span
@@ -68,6 +69,12 @@ org
     padding: 10px;
     background-color: rgb(153, 189, 94);
     border-color: rgb(104, 196, 119);
+}
+
+.btn-primary:hover 
+{
+    border-color: rgb(79, 161, 92);
+    background-color: rgb(113, 143, 64);
 }
 
 .btn-secondary

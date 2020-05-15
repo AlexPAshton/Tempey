@@ -1,46 +1,14 @@
 <?php
-    class Person
-    {
-        public $name = "Alex Ashton";
-        public $age = 22;
-        public $sex = "male";
-        public $bio = "default bio";
-
-        public function __construct($name, $age, $sex, $bio)
-        {
-            $this->name = $name;
-            $this->age = $age;
-            $this->sex = $sex;
-            $this->bio = $bio;
-        }
-    }
-
-    class CoreFeature
-    {
-        public $title;
-        public $subtitle;
-        public $description;
-
-        public function __construct($title, $subtitle, $description)
-        {
-            $this->title = $title;
-            $this->subtitle = $subtitle;
-            $this->description = $description;
-        }
-    }
+    include("./models/corefeaturemodel.php");
 
     class IndexService
     {
         public function Run()
         {
             SetVar('CoreFeatures', [
-                new CoreFeature("{{ x }}", "Simple Syntax", "Use simple syntax to have your variables inserted within your html code."),
-                new CoreFeature("{{ for x in y }}", "Core Functionality", "Outputting lists? No problem! Use built in logic syntax to iterate over an array."),
-                new CoreFeature("include(...)", "Easy Implementation", "Implement into any HTML page with the use of a php include at the bottom of the document."),
-            ]);
-            SetVar('People', [
-                new Person("Alex", 22, "male", "A software developer."), 
-                new Person("Bobbie", 32, "female", "An astronought.")
+                new CoreFeatureModel("{{ x }}", "Simple Syntax", "Use simple syntax to have your variables inserted within your html code."),
+                new CoreFeatureModel("{{ for x in y }}", "Core Functionality", "Outputting lists? No problem! Use built in logic syntax to iterate over an array."),
+                new CoreFeatureModel("include(...)", "Easy Implementation", "Implement into any HTML page with the use of a php include at the bottom of the document."),
             ]);
             SetVar('Punchline','A simple, bare-bones, templating framework.');
             SetVar('Title','{{ Tempey }}');
