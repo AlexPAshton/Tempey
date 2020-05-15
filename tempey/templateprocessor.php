@@ -1,9 +1,11 @@
 <?php
+    include(__DIR__ . "./templatevariables.php");
+
     class TemplatingEngine
     {
         public function Process($template)
         {
-            global $data;
+            global $templateData;
 
             $lines = explode(PHP_EOL, $template);
             $linesout = "";
@@ -37,16 +39,16 @@
                             {
                                 $subvariable = $variablebits[1];
         
-                                if (isset($data[$variablebits[0]]) && isset($data[$variablebits[0]]->$subvariable))
+                                if (isset($templateData[$variablebits[0]]) && isset($templateData[$variablebits[0]]->$subvariable))
                                 {
-                                    $variablevalue = $data[$variablebits[0]]->$subvariable;
+                                    $variablevalue = $templateData[$variablebits[0]]->$subvariable;
                                 }
                             }
                             else
                             {
-                                if (isset($data[$bitparts[0]]))
+                                if (isset($templateData[$bitparts[0]]))
                                 {
-                                    $variablevalue = $data[$bitparts[0]];
+                                    $variablevalue = $templateData[$bitparts[0]];
                                 }
                             }
         
@@ -74,7 +76,7 @@
                         {
                             $i = $loopStartIndex;
                             $loopIndex++;
-                            SetVar($loopParamLoopName, GetVar($loopParaName)[$loopIndex]);
+                            SetTemplateVar($loopParamLoopName, GetTemplateVar($loopParaName)[$loopIndex]);
                         }
                     }
                     else
@@ -83,8 +85,8 @@
                         $loopParamLoopName = $command_bits[1];
                         $loopParaName = $command_bits[3];
                         $loopIndex = 0;
-                        $loopMaxIndex = sizeof(GetVar($loopParaName));
-                        SetVar($loopParamLoopName, GetVar($loopParaName)[$loopIndex]);
+                        $loopMaxIndex = sizeof(GetTemplateVar($loopParaName));
+                        SetTemplateVar($loopParamLoopName, GetTemplateVar($loopParaName)[$loopIndex]);
                     }
                 }
 
@@ -96,6 +98,17 @@
 
         public function Run()
         {
+            $classes_included = get_declared_classes ();
+
+            foreach ($classes_included as $classname)
+            {
+                if (strpos($classname, "Service"))
+                {
+                    $class = new $classname();
+                    $class->Run();
+                }
+            }
+
             $htmltemplate = ob_get_contents();
 
             ob_clean() ;
@@ -104,9 +117,5 @@
         }
     }
 
-    $templatingengine = new TemplatingEngine();
-    $indexservice = new IndexService($templatingengine);
-
-    $indexservice->Run();
-    $templatingengine->Run();
+    (new TemplatingEngine())->Run();
 ?>

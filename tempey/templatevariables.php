@@ -1,15 +1,15 @@
 <?php
-    $data = [];
+    $data = array();
     
-    function SetVar($key, $value)
+    function SetTemplateVar($key, $value)
     {
-        global $data;
-        $data[$key] = $value;
+        global $templateData;
+        $templateData[$key] = $value;
     }
 
-    function GetVar($key)
+    function GetTemplateVar($key)
     {
-        global $data;
-        return $data[$key];
+        global $templateData;
+        return $templateData[$key];
     }
 ?>

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Tempey</title>
+        <title>{{ Title }}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -29,8 +29,8 @@
                         </div> 
                         <br>   
                     {% endfor %}   
-                    <a class="btn btn-primary mb-2" href="https://github.com/AlexPAshton/Tempey/archive/master.zip">Download Framework</a>
-                    <a class="btn btn-secondary mb-5" href="https://github.com/AlexPAshton/Tempey">Github Repository</a>
+                    <a class="btn btn-primary mb-2" href="{{ GitHubDownload }}">Download Framework</a>
+                    <a class="btn btn-secondary mb-5" href="{{ GitHubRepo }}">Github Repository</a>
                 </div>
                 <div class="col-md-9">
                     <h4>{{ ContentTitle }}</h4>
@@ -51,6 +51,5 @@
     </body>
 </html>
 
-<?php include("./tempey/templatevariables.php");?>
 <?php include("./services/indexservice.php");?>
 <?php include("./tempey/templateprocessor.php");?>
