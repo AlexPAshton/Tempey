@@ -1,5 +1,5 @@
 <?php
-    include(__DIR__ . "./templatevariables.php");
+    include(__DIR__ . "/templatevariables.php");
 
     class TemplatingEngine
     {
